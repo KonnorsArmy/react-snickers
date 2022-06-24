@@ -37,8 +37,16 @@ body {
   height: 100%;
   right: 0;
 
+  display: flex;
+  flex-direction: column;
+
   background: #FFFFFF;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+
+  .items{
+    overflow: auto;
+    margin-bottom: 40px;
+  }
 
   h2{
     margin: 0;
@@ -74,6 +82,59 @@ body {
     &:hover{
       opacity: 1;
     }
+  }
+}
+.cartTotalBlock{
+  ul{
+    margin-bottom: 30px !important;
+    li{
+      margin-bottom: 19px;
+      display: flex;
+      align-items: flex-end;
+    }
+  
+    div{
+      position: relative;
+      top: -4px;
+      margin: 0 7px;
+      // Занимает всю ширину допустимую в строчке
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #dfdfdf;
+    }
+  }
+  .greenButton{
+    position: relative;
+    &:hover{
+      img{
+        transform: translateX(5px);
+      }
+    }
+    img{
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: transform .15s ease-in-out;
+    }
+  }
+}
+.greenButton{
+  width: 100%; 
+  height: 55px;
+  background: #9DD558;
+  border-radius: 18px;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .1s ease-in-out;
+
+  &:hover{
+    background: lighten($color: #9dd558, $amount: 5%);
+  }
+  &:active{
+    background: darken($color: #9dd558, $amount: 5%);
   }
 }
 
